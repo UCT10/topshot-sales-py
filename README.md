@@ -7,8 +7,6 @@ Python client for querying Top Shot data from Flow API.
 
 2. Install Python gRPC packages with `pip install -r requirements.txt`.
 
-3. Run Python client from the build directory.  
-
 ## Compiling Protocol Buffers
 
 1. Clone Flow repo for protocol buffer source files `git clone git@github.com:onflow/flow.git`.
