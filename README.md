@@ -3,7 +3,7 @@ Python client for querying Top Shot data from Flow API.
 
 ## Setup
 
-1. `python -m venv env`.
+1. (Optional) create Python virtual environment with `python -m venv env`.
 
 2. Install Python gRPC packages with `pip install -r requirements.txt`.
 

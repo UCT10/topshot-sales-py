@@ -9,6 +9,7 @@ MAIN_NODE = 'access.mainnet.nodes.onflow.org:9000'
 def main():
     channel = grpc.insecure_channel(MAIN_NODE)
     stub = access_pb2_grpc.AccessAPIStub(channel)
+    
     response = stub.GetLatestBlock(access_pb2.GetLatestBlockRequest())
     latest_block_heght = response.block.height
 
