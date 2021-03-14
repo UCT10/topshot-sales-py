@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from flow.access import access_pb2 as flow_dot_access_dot_access__pb2
+from flow.legacy.access import access_pb2 as flow_dot_legacy_dot_access_dot_access__pb2
 
 
 class AccessAPIStub(object):
@@ -16,109 +16,104 @@ class AccessAPIStub(object):
             channel: A grpc.Channel.
         """
         self.Ping = channel.unary_unary(
-                '/flow.access.AccessAPI/Ping',
-                request_serializer=flow_dot_access_dot_access__pb2.PingRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.PingResponse.FromString,
+                '/access.AccessAPI/Ping',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.PingRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.PingResponse.FromString,
                 )
         self.GetLatestBlockHeader = channel.unary_unary(
-                '/flow.access.AccessAPI/GetLatestBlockHeader',
-                request_serializer=flow_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+                '/access.AccessAPI/GetLatestBlockHeader',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
                 )
         self.GetBlockHeaderByID = channel.unary_unary(
-                '/flow.access.AccessAPI/GetBlockHeaderByID',
-                request_serializer=flow_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+                '/access.AccessAPI/GetBlockHeaderByID',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
                 )
         self.GetBlockHeaderByHeight = channel.unary_unary(
-                '/flow.access.AccessAPI/GetBlockHeaderByHeight',
-                request_serializer=flow_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+                '/access.AccessAPI/GetBlockHeaderByHeight',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
                 )
         self.GetLatestBlock = channel.unary_unary(
-                '/flow.access.AccessAPI/GetLatestBlock',
-                request_serializer=flow_dot_access_dot_access__pb2.GetLatestBlockRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+                '/access.AccessAPI/GetLatestBlock',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
                 )
         self.GetBlockByID = channel.unary_unary(
-                '/flow.access.AccessAPI/GetBlockByID',
-                request_serializer=flow_dot_access_dot_access__pb2.GetBlockByIDRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+                '/access.AccessAPI/GetBlockByID',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
                 )
         self.GetBlockByHeight = channel.unary_unary(
-                '/flow.access.AccessAPI/GetBlockByHeight',
-                request_serializer=flow_dot_access_dot_access__pb2.GetBlockByHeightRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+                '/access.AccessAPI/GetBlockByHeight',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByHeightRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
                 )
         self.GetCollectionByID = channel.unary_unary(
-                '/flow.access.AccessAPI/GetCollectionByID',
-                request_serializer=flow_dot_access_dot_access__pb2.GetCollectionByIDRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.CollectionResponse.FromString,
+                '/access.AccessAPI/GetCollectionByID',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetCollectionByIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.CollectionResponse.FromString,
                 )
         self.SendTransaction = channel.unary_unary(
-                '/flow.access.AccessAPI/SendTransaction',
-                request_serializer=flow_dot_access_dot_access__pb2.SendTransactionRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.SendTransactionResponse.FromString,
+                '/access.AccessAPI/SendTransaction',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionResponse.FromString,
                 )
         self.GetTransaction = channel.unary_unary(
-                '/flow.access.AccessAPI/GetTransaction',
-                request_serializer=flow_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.TransactionResponse.FromString,
+                '/access.AccessAPI/GetTransaction',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.TransactionResponse.FromString,
                 )
         self.GetTransactionResult = channel.unary_unary(
-                '/flow.access.AccessAPI/GetTransactionResult',
-                request_serializer=flow_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.TransactionResultResponse.FromString,
+                '/access.AccessAPI/GetTransactionResult',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.TransactionResultResponse.FromString,
                 )
         self.GetAccount = channel.unary_unary(
-                '/flow.access.AccessAPI/GetAccount',
-                request_serializer=flow_dot_access_dot_access__pb2.GetAccountRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.GetAccountResponse.FromString,
+                '/access.AccessAPI/GetAccount',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountResponse.FromString,
                 )
         self.GetAccountAtLatestBlock = channel.unary_unary(
-                '/flow.access.AccessAPI/GetAccountAtLatestBlock',
-                request_serializer=flow_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.AccountResponse.FromString,
+                '/access.AccessAPI/GetAccountAtLatestBlock',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.FromString,
                 )
         self.GetAccountAtBlockHeight = channel.unary_unary(
-                '/flow.access.AccessAPI/GetAccountAtBlockHeight',
-                request_serializer=flow_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.AccountResponse.FromString,
+                '/access.AccessAPI/GetAccountAtBlockHeight',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.FromString,
                 )
         self.ExecuteScriptAtLatestBlock = channel.unary_unary(
-                '/flow.access.AccessAPI/ExecuteScriptAtLatestBlock',
-                request_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+                '/access.AccessAPI/ExecuteScriptAtLatestBlock',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
                 )
         self.ExecuteScriptAtBlockID = channel.unary_unary(
-                '/flow.access.AccessAPI/ExecuteScriptAtBlockID',
-                request_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+                '/access.AccessAPI/ExecuteScriptAtBlockID',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
                 )
         self.ExecuteScriptAtBlockHeight = channel.unary_unary(
-                '/flow.access.AccessAPI/ExecuteScriptAtBlockHeight',
-                request_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+                '/access.AccessAPI/ExecuteScriptAtBlockHeight',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
                 )
         self.GetEventsForHeightRange = channel.unary_unary(
-                '/flow.access.AccessAPI/GetEventsForHeightRange',
-                request_serializer=flow_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.EventsResponse.FromString,
+                '/access.AccessAPI/GetEventsForHeightRange',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.FromString,
                 )
         self.GetEventsForBlockIDs = channel.unary_unary(
-                '/flow.access.AccessAPI/GetEventsForBlockIDs',
-                request_serializer=flow_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.EventsResponse.FromString,
+                '/access.AccessAPI/GetEventsForBlockIDs',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.FromString,
                 )
         self.GetNetworkParameters = channel.unary_unary(
-                '/flow.access.AccessAPI/GetNetworkParameters',
-                request_serializer=flow_dot_access_dot_access__pb2.GetNetworkParametersRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.GetNetworkParametersResponse.FromString,
-                )
-        self.GetLatestProtocolStateSnapshot = channel.unary_unary(
-                '/flow.access.AccessAPI/GetLatestProtocolStateSnapshot',
-                request_serializer=flow_dot_access_dot_access__pb2.GetLatestProtocolStateSnapshotRequest.SerializeToString,
-                response_deserializer=flow_dot_access_dot_access__pb2.ProtocolStateSnapshotResponse.FromString,
+                '/access.AccessAPI/GetNetworkParameters',
+                request_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersResponse.FromString,
                 )
 
 
@@ -271,15 +266,6 @@ class AccessAPIServicer(object):
 
     def GetNetworkParameters(self, request, context):
         """GetNetworkParameters retrieves the Flow network details
-        ProtocolState
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetLatestProtocolStateSnapshot(self, request, context):
-        """GetLatestProtocolStateSnapshot retrieves the latest sealed protocol state snapshot.
-        Used by Flow nodes joining the network to bootstrap a space-efficient local state.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -290,112 +276,107 @@ def add_AccessAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=flow_dot_access_dot_access__pb2.PingRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.PingResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.PingRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.PingResponse.SerializeToString,
             ),
             'GetLatestBlockHeader': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLatestBlockHeader,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
             ),
             'GetBlockHeaderByID': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBlockHeaderByID,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
             ),
             'GetBlockHeaderByHeight': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBlockHeaderByHeight,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.SerializeToString,
             ),
             'GetLatestBlock': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLatestBlock,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetLatestBlockRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
             ),
             'GetBlockByID': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBlockByID,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetBlockByIDRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
             ),
             'GetBlockByHeight': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBlockByHeight,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetBlockByHeightRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByHeightRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.SerializeToString,
             ),
             'GetCollectionByID': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCollectionByID,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetCollectionByIDRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.CollectionResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetCollectionByIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.CollectionResponse.SerializeToString,
             ),
             'SendTransaction': grpc.unary_unary_rpc_method_handler(
                     servicer.SendTransaction,
-                    request_deserializer=flow_dot_access_dot_access__pb2.SendTransactionRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.SendTransactionResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionResponse.SerializeToString,
             ),
             'GetTransaction': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransaction,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetTransactionRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.TransactionResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.TransactionResponse.SerializeToString,
             ),
             'GetTransactionResult': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransactionResult,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetTransactionRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.TransactionResultResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.TransactionResultResponse.SerializeToString,
             ),
             'GetAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccount,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetAccountRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.GetAccountResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountResponse.SerializeToString,
             ),
             'GetAccountAtLatestBlock': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccountAtLatestBlock,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.AccountResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.SerializeToString,
             ),
             'GetAccountAtBlockHeight': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccountAtBlockHeight,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.AccountResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.SerializeToString,
             ),
             'ExecuteScriptAtLatestBlock': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteScriptAtLatestBlock,
-                    request_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
             ),
             'ExecuteScriptAtBlockID': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteScriptAtBlockID,
-                    request_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
             ),
             'ExecuteScriptAtBlockHeight': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteScriptAtBlockHeight,
-                    request_deserializer=flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.SerializeToString,
             ),
             'GetEventsForHeightRange': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEventsForHeightRange,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.EventsResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.SerializeToString,
             ),
             'GetEventsForBlockIDs': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEventsForBlockIDs,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.EventsResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.SerializeToString,
             ),
             'GetNetworkParameters': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNetworkParameters,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetNetworkParametersRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.GetNetworkParametersResponse.SerializeToString,
-            ),
-            'GetLatestProtocolStateSnapshot': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetLatestProtocolStateSnapshot,
-                    request_deserializer=flow_dot_access_dot_access__pb2.GetLatestProtocolStateSnapshotRequest.FromString,
-                    response_serializer=flow_dot_access_dot_access__pb2.ProtocolStateSnapshotResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'flow.access.AccessAPI', rpc_method_handlers)
+            'access.AccessAPI', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -415,9 +396,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/Ping',
-            flow_dot_access_dot_access__pb2.PingRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.PingResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/Ping',
+            flow_dot_legacy_dot_access_dot_access__pb2.PingRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -432,9 +413,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetLatestBlockHeader',
-            flow_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetLatestBlockHeader',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockHeaderRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -449,9 +430,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetBlockHeaderByID',
-            flow_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetBlockHeaderByID',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByIDRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -466,9 +447,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetBlockHeaderByHeight',
-            flow_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetBlockHeaderByHeight',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetBlockHeaderByHeightRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockHeaderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -483,9 +464,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetLatestBlock',
-            flow_dot_access_dot_access__pb2.GetLatestBlockRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetLatestBlock',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetLatestBlockRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -500,9 +481,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetBlockByID',
-            flow_dot_access_dot_access__pb2.GetBlockByIDRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetBlockByID',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByIDRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -517,9 +498,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetBlockByHeight',
-            flow_dot_access_dot_access__pb2.GetBlockByHeightRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.BlockResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetBlockByHeight',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetBlockByHeightRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.BlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -534,9 +515,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetCollectionByID',
-            flow_dot_access_dot_access__pb2.GetCollectionByIDRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.CollectionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetCollectionByID',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetCollectionByIDRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.CollectionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -551,9 +532,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/SendTransaction',
-            flow_dot_access_dot_access__pb2.SendTransactionRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.SendTransactionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/SendTransaction',
+            flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.SendTransactionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -568,9 +549,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetTransaction',
-            flow_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.TransactionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetTransaction',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.TransactionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -585,9 +566,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetTransactionResult',
-            flow_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.TransactionResultResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetTransactionResult',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetTransactionRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.TransactionResultResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -602,9 +583,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetAccount',
-            flow_dot_access_dot_access__pb2.GetAccountRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.GetAccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetAccount',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetAccountRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.GetAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -619,9 +600,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetAccountAtLatestBlock',
-            flow_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.AccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetAccountAtLatestBlock',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtLatestBlockRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -636,9 +617,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetAccountAtBlockHeight',
-            flow_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.AccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetAccountAtBlockHeight',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetAccountAtBlockHeightRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.AccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -653,9 +634,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/ExecuteScriptAtLatestBlock',
-            flow_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/ExecuteScriptAtLatestBlock',
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtLatestBlockRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -670,9 +651,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/ExecuteScriptAtBlockID',
-            flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/ExecuteScriptAtBlockID',
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -687,9 +668,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/ExecuteScriptAtBlockHeight',
-            flow_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/ExecuteScriptAtBlockHeight',
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptAtBlockHeightRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.ExecuteScriptResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -704,9 +685,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetEventsForHeightRange',
-            flow_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.EventsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetEventsForHeightRange',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForHeightRangeRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -721,9 +702,9 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetEventsForBlockIDs',
-            flow_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.EventsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetEventsForBlockIDs',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetEventsForBlockIDsRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.EventsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -738,25 +719,8 @@ class AccessAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetNetworkParameters',
-            flow_dot_access_dot_access__pb2.GetNetworkParametersRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.GetNetworkParametersResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetLatestProtocolStateSnapshot(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.access.AccessAPI/GetLatestProtocolStateSnapshot',
-            flow_dot_access_dot_access__pb2.GetLatestProtocolStateSnapshotRequest.SerializeToString,
-            flow_dot_access_dot_access__pb2.ProtocolStateSnapshotResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/access.AccessAPI/GetNetworkParameters',
+            flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersRequest.SerializeToString,
+            flow_dot_legacy_dot_access_dot_access__pb2.GetNetworkParametersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

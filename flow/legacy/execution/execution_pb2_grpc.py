@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from flow.execution import execution_pb2 as flow_dot_execution_dot_execution__pb2
+from flow.legacy.execution import execution_pb2 as flow_dot_legacy_dot_execution_dot_execution__pb2
 
 
 class ExecutionAPIStub(object):
@@ -16,29 +16,29 @@ class ExecutionAPIStub(object):
             channel: A grpc.Channel.
         """
         self.Ping = channel.unary_unary(
-                '/flow.execution.ExecutionAPI/Ping',
-                request_serializer=flow_dot_execution_dot_execution__pb2.PingRequest.SerializeToString,
-                response_deserializer=flow_dot_execution_dot_execution__pb2.PingResponse.FromString,
+                '/execution.ExecutionAPI/Ping',
+                request_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.PingRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.PingResponse.FromString,
                 )
         self.GetAccountAtBlockID = channel.unary_unary(
-                '/flow.execution.ExecutionAPI/GetAccountAtBlockID',
-                request_serializer=flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.SerializeToString,
-                response_deserializer=flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.FromString,
+                '/execution.ExecutionAPI/GetAccountAtBlockID',
+                request_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.FromString,
                 )
         self.ExecuteScriptAtBlockID = channel.unary_unary(
-                '/flow.execution.ExecutionAPI/ExecuteScriptAtBlockID',
-                request_serializer=flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
-                response_deserializer=flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.FromString,
+                '/execution.ExecutionAPI/ExecuteScriptAtBlockID',
+                request_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.FromString,
                 )
         self.GetEventsForBlockIDs = channel.unary_unary(
-                '/flow.execution.ExecutionAPI/GetEventsForBlockIDs',
-                request_serializer=flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.SerializeToString,
-                response_deserializer=flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.FromString,
+                '/execution.ExecutionAPI/GetEventsForBlockIDs',
+                request_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.FromString,
                 )
         self.GetTransactionResult = channel.unary_unary(
-                '/flow.execution.ExecutionAPI/GetTransactionResult',
-                request_serializer=flow_dot_execution_dot_execution__pb2.GetTransactionResultRequest.SerializeToString,
-                response_deserializer=flow_dot_execution_dot_execution__pb2.GetTransactionResultResponse.FromString,
+                '/execution.ExecutionAPI/GetTransactionResult',
+                request_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultRequest.SerializeToString,
+                response_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultResponse.FromString,
                 )
 
 
@@ -90,32 +90,32 @@ def add_ExecutionAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=flow_dot_execution_dot_execution__pb2.PingRequest.FromString,
-                    response_serializer=flow_dot_execution_dot_execution__pb2.PingResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.PingRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.PingResponse.SerializeToString,
             ),
             'GetAccountAtBlockID': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccountAtBlockID,
-                    request_deserializer=flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.FromString,
-                    response_serializer=flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.SerializeToString,
             ),
             'ExecuteScriptAtBlockID': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteScriptAtBlockID,
-                    request_deserializer=flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.FromString,
-                    response_serializer=flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.SerializeToString,
             ),
             'GetEventsForBlockIDs': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEventsForBlockIDs,
-                    request_deserializer=flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.FromString,
-                    response_serializer=flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.SerializeToString,
             ),
             'GetTransactionResult': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransactionResult,
-                    request_deserializer=flow_dot_execution_dot_execution__pb2.GetTransactionResultRequest.FromString,
-                    response_serializer=flow_dot_execution_dot_execution__pb2.GetTransactionResultResponse.SerializeToString,
+                    request_deserializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultRequest.FromString,
+                    response_serializer=flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'flow.execution.ExecutionAPI', rpc_method_handlers)
+            'execution.ExecutionAPI', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -135,9 +135,9 @@ class ExecutionAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.execution.ExecutionAPI/Ping',
-            flow_dot_execution_dot_execution__pb2.PingRequest.SerializeToString,
-            flow_dot_execution_dot_execution__pb2.PingResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/execution.ExecutionAPI/Ping',
+            flow_dot_legacy_dot_execution_dot_execution__pb2.PingRequest.SerializeToString,
+            flow_dot_legacy_dot_execution_dot_execution__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -152,9 +152,9 @@ class ExecutionAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.execution.ExecutionAPI/GetAccountAtBlockID',
-            flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.SerializeToString,
-            flow_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/execution.ExecutionAPI/GetAccountAtBlockID',
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDRequest.SerializeToString,
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetAccountAtBlockIDResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -169,9 +169,9 @@ class ExecutionAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.execution.ExecutionAPI/ExecuteScriptAtBlockID',
-            flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
-            flow_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/execution.ExecutionAPI/ExecuteScriptAtBlockID',
+            flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDRequest.SerializeToString,
+            flow_dot_legacy_dot_execution_dot_execution__pb2.ExecuteScriptAtBlockIDResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -186,9 +186,9 @@ class ExecutionAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.execution.ExecutionAPI/GetEventsForBlockIDs',
-            flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.SerializeToString,
-            flow_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/execution.ExecutionAPI/GetEventsForBlockIDs',
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsRequest.SerializeToString,
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetEventsForBlockIDsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -203,8 +203,8 @@ class ExecutionAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flow.execution.ExecutionAPI/GetTransactionResult',
-            flow_dot_execution_dot_execution__pb2.GetTransactionResultRequest.SerializeToString,
-            flow_dot_execution_dot_execution__pb2.GetTransactionResultResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/execution.ExecutionAPI/GetTransactionResult',
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultRequest.SerializeToString,
+            flow_dot_legacy_dot_execution_dot_execution__pb2.GetTransactionResultResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
